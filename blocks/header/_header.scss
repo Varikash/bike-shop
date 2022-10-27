@@ -1,20 +1,32 @@
 .header {
-  width: 100%;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  padding-right: 120px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   z-index: 100;
-  position: sticky;
+  background-color: transparent;
   top: 0;
   left: 0;
-  background-color: #F4F4F4;
+  width: 100%;
+  position: fixed;
 
   @media screen and (max-width: 767px) {
-    padding-right: 18px;
+    // padding-right: 18px;
   }
+
+  &__navigation {
+    max-width: 1440px;
+    width: 100%;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    padding-right: 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #F4F4F4;
+
+    @media screen and (max-width: 767px) {
+      padding-right: 18px;
+    }
+  }
+
 
   &__menu {
     @media screen and (max-width: 767px) {
