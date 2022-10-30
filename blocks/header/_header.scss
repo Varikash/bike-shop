@@ -6,10 +6,6 @@
   width: 100%;
   position: fixed;
 
-  @media screen and (max-width: 767px) {
-    // padding-right: 18px;
-  }
-
   &__navigation {
     max-width: 1440px;
     width: 100%;
@@ -22,14 +18,14 @@
     align-items: center;
     background-color: #F4F4F4;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 999px) {
       padding-right: 18px;
     }
   }
 
 
   &__menu {
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 889px) {
       display: none;
     }
   }
@@ -55,7 +51,7 @@
   &__button {
     display: none;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 889px) {
       z-index: 10;
       display: block;
       position: relative;
