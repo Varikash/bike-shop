@@ -1,13 +1,9 @@
 @use '../vendors/reset';
 @use '../vendors/fonts';
 @use '../blocks/page/page';
-
-@use '../blocks/slider/slider';
-
 @use '../blocks/header/header';
-
 @use '../blocks/main/main';
-
 @use '../blocks/intro/intro';
-
 @use '../blocks/surface/surface';
+@use '../blocks/slider/slider';
+@use '../blocks/bikes/bikes';

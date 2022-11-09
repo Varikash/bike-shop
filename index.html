@@ -39,9 +39,9 @@
         
       </div>
       <div class="intro__placeholder">
-        <div class="intro__card">
+        <article class="intro__card">
           <img src="./images/intro__bike.jpeg" alt="Велосипед" class="intro__image">
-        </div>
+        </article>
       </div>
     </section>
     <section class="surface">
@@ -102,11 +102,47 @@
       <button class="slider__control slider__control_direction_next" data-slide="next">
       </button>
     </section>
-    <section class="bikes"></section>
+    <section class="bikes">
+      <div class="bikes__info">
+        <h2 class="bikes__header">Велосипеды</h2>
+        <ul class="bikes__btn-list">
+          <li><button class="bikes__btn bikes__btn_active">Шоссе</button></li>
+          <li><button class="bikes__btn">Грэвел</button></li>
+          <li><button class="bikes__btn">ТТ</button></li>
+        </ul>
+      </div>
+      <ul class="bikes__cards-list">
+        <li class="bikes__cards-point">
+          <article class="bikes__card">
+            <a href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN" target="_blank" class="bikes__link">
+              <img src="./images/highway__caledonia.jpeg" alt="Cervelo Caledonia-5" class="bikes__card-image">
+            </a>
+          </article>
+          <p class="bikes__text">Cervelo Caledonia-5</p>
+        </li>
+        <li class="bikes__cards-point">
+          <article class="bikes__card">
+            <a href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J" target="_blank" class="bikes__link">
+              <img src="./images/highway__systemsix.jpg" alt="Cannondale Systemsix Himod" class="bikes__card-image">
+            </a>
+          </article>
+          <p class="bikes__text">Cannondale Systemsix Himod</p>
+        </li>
+        <li class="bikes__cards-point">
+          <article class="bikes__card">
+            <a href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF" target="_blank" class="bikes__link">
+              <img src="./images/highway__domane.jpg" alt="Trek Domane SL-7" class="bikes__card-image">
+            </a>
+          </article>
+          <p class="bikes__text">Trek Domane SL-7</p>
+        </li>
+      </ul>
+    </section>
     <section class="trainings"></section>
   </main>
   <footer class="footer"></footer>
   </div>
   <script src="./vendors/slider/slider.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
