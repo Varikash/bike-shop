@@ -7,6 +7,8 @@ const highwayBtn = document.querySelector('#highway');
 const gravelBtn = document.querySelector('#gravel');
 const triatlonBtn = document.querySelector('#triatlon');
 
+const surfaceType = document.querySelector('#surface');
+
 const highwayImage = [
   './images/highway__caledonia.jpeg',
   './images/highway__systemsix.jpg',
@@ -79,6 +81,10 @@ triatlonBtn.addEventListener('click', () => {
   attributeSet(triatlonImage, triatlonText, triatlonLink);
   removeActiveClass();
   addActiveClass(triatlonBtn);
+})
+
+surfaceType.addEventListener('change', () => {
+  console.log(surfaceType.value);
 })
 
   

@@ -29,6 +29,7 @@
     line-height: 28px;
     text-align: right;
     color: #222;
+    background-color: #F4F4F4;
     opacity: 0.7;
 
     &:hover {
@@ -150,4 +151,7 @@
     }
   }
 
+  @media screen and (max-width: 648px) {
+    display: none;
+  }
 }
