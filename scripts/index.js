@@ -9,6 +9,10 @@ const triatlonBtn = document.querySelector('#triatlon');
 
 const surfaceType = document.querySelector('#surface');
 
+const mobileCardsImage = document.querySelectorAll('.bikes-mobile__card-image');
+const mobileCardsText = document.querySelectorAll('.bikes-mobile__text');
+const mobileCardsLink = document.querySelectorAll('.bikes-mobile__link');
+
 const highwayImage = [
   './images/highway__caledonia.jpeg',
   './images/highway__systemsix.jpg',
@@ -84,7 +88,13 @@ triatlonBtn.addEventListener('click', () => {
 })
 
 surfaceType.addEventListener('change', () => {
-  console.log(surfaceType.value);
+  if (surfaceType.value == 'highway') {
+    mobileCardsAttributeSet(highwayImage, highwayText, highwayLink);
+  } else if (surfaceType.value == 'gravel') {
+    mobileCardsAttributeSet(gravelImage, gravelText, gravelLink);
+  } else if (surfaceType.value == 'triatlon') {
+    mobileCardsAttributeSet(triatlonImage, triatlonText, triatlonLink);
+  }
 })
 
   
@@ -102,6 +112,15 @@ function attributeSet(image, text, link) {
     cardImage[i].setAttribute('src', image[i]);
     cardText[i].innerHTML = text[i];
     cardLink[i].setAttribute('href', link[i]);
+  }
+  return;
+}
+
+function mobileCardsAttributeSet(image, text, link) {
+  for (i = 0; i < cards.length; i++) {
+    mobileCardsImage[i].setAttribute('src', image[i]);
+    mobileCardsText[i].innerHTML = text[i];
+    mobileCardsLink[i].setAttribute('href', link[i]);
   }
   return;
 }
