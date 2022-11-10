@@ -60,14 +60,14 @@
     background-color: #EBEBEB;
 
     &_direction_previous {
-      background-image: url(../../images/slider_button_prev.svg);
+      background-image: url("../../images/slider_button_prev.svg");
       background-repeat: no-repeat;
       background-position: center;
       left: 8.33%;
     }
 
     &_direction_next {
-      background-image: url(../../images/slider_button_next.svg);
+      background-image: url("../../images/slider_button_next.svg");
       background-repeat: no-repeat;
       background-position: center;
       left: 13%;
