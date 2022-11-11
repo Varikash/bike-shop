@@ -1,0 +1,125 @@
+.trainings {
+  display: flex;
+  justify-content: space-between;
+  padding: 150px 8.33% 120px 8.33%;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    max-width: 460px;
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+  }
+
+  &__info-image {
+    display: none;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #222;
+    opacity: .7;
+  }
+
+  &__links {
+    display: flex;
+    column-gap: 30px;
+    margin-top: auto;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #151515;
+  }
+
+  @media screen and (max-width: 1299px) {
+    &__image {
+      width: calc(150px + (580 - 150) * ((100vw - 600px) / (1299 - 600)));
+      height: calc(100px + (460 - 100) * ((100vw - 600px) / (1299 - 600)));
+    }
+  }
+
+  @media screen and (max-width: 1114px) {
+    padding: 150px 18px 120px 8.33%;
+
+    &__image {
+      width: 466px;
+      height: 365px;
+    }
+  }
+
+  @media screen and (max-width: 999px) {
+    &__info {
+      max-width: 300px;
+    }
+  }
+
+  @media screen and (max-width: 889px) {
+    padding: 80px 120px 60px 18px;
+
+    &__header {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__image {
+      width: 324px;
+      height: 265px;
+    }
+  }
+
+  @media screen and (max-width: 790px) {
+    padding: 80px 60px 60px 18px;
+  }
+
+  @media screen and (max-width: 704px) {
+    padding: 80px 18px 60px 18px;
+  }
+
+  @media screen and (max-width: 648px) {
+    padding-top: 40px;
+
+    &__image {
+      display: none;
+    }
+
+    &__info {
+      row-gap: 40px;
+    }
+
+    &__header {
+      padding-top: 40px;
+      border-top: 1px solid #E3E3E3;
+      max-width: 284px;
+    }
+
+    &__links {
+      margin: 0;
+    }
+
+    &__info-image {
+      display: block;
+    }
+  }
+
+}
