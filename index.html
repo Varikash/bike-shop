@@ -196,7 +196,7 @@
           <p class="trainings__text">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а
             записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный
             план.</p>
-          
+
 
           <ul class="trainings__links">
             <a href="https://www.strava.com" class="trainings__link" target="_blank">Strava</a>
@@ -207,20 +207,25 @@
       </section>
     </main>
     <footer class="footer">
-      <h2>Подпишитесь на рассылку &mdash;</h2>
-      <input type="text" placeholder="Ваш e-mail">
-      <div>
-        <p>&copy; Road Club 2022</p>
-        <div class="container">
-          <div class="tabs">
-            <input type="radio" id="radio-1" name="tabs" checked />
-            <label class="tab" for="radio-1"></label>
-            <input type="radio" id="radio-3" name="tabs" />
-            <label class="tab" for="radio-3"></label>
-            <span class="glider"></span>
+      <h2 class="footer__header">Подпишитесь на рассылку &mdash;</h2>
+      <form class="footer__form">
+        <input type="email" placeholder="Ваш e-mail" class="footer__input">
+        <button type="submit" class="footer__form-btn">ok</button>
+      </form>
+
+      <div class="footer__additions">
+        <p class="footer__copyright">&copy; Road Club 2022</p>
+        <div class="footer__container">
+          <div class="footer__tabs">
+            <input class="footer__radio-btn" type="radio" id="light" name="tabs" checked />
+            <label class="footer__tab" for="light"></label>
+            <input class="footer__radio-btn" type="radio" id="dark" name="tabs" />
+            <label class="footer__tab" for="dark"></label>
+            <span class="footer__glider"></span>
           </div>
         </div>
       </div>
+
     </footer>
   </div>
   <script src="./vendors/slider/slider.js"></script>

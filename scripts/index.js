@@ -13,6 +13,10 @@ const mobileCardsImage = document.querySelectorAll('.bikes-mobile__card-image');
 const mobileCardsText = document.querySelectorAll('.bikes-mobile__text');
 const mobileCardsLink = document.querySelectorAll('.bikes-mobile__link');
 
+const emailForm = document.querySelector('.footer__form');
+const footerInput = document.querySelector('.footer__input');
+const formBtn = document.querySelector('.footer__form-btn');
+
 const highwayImage = [
   './images/highway__caledonia.jpeg',
   './images/highway__systemsix.jpg',
@@ -67,7 +71,7 @@ const triatlonLink = [
   'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q',
 ]
 
-
+/* При выборе "шоссе" показываем соответствующие карточки с велосипедами */
 
 highwayBtn.addEventListener('click', () => {
   attributeSet(highwayImage, highwayText, highwayLink);
@@ -75,17 +79,23 @@ highwayBtn.addEventListener('click', () => {
   addActiveClass(highwayBtn);
 })
 
+/* При выборе "грэвел" показываем соответствующие карточки с велосипедами */
+
 gravelBtn.addEventListener('click', () => {
   attributeSet(gravelImage, gravelText, gravelLink);
   removeActiveClass();
   addActiveClass(gravelBtn);
 })
 
+/* При выборе "ТТ" показываем соответствующие карточки с велосипедами */
+
 triatlonBtn.addEventListener('click', () => {
   attributeSet(triatlonImage, triatlonText, triatlonLink);
   removeActiveClass();
   addActiveClass(triatlonBtn);
 })
+
+/* настройка карточек в мобильной версии секции */
 
 surfaceType.addEventListener('change', () => {
   if (surfaceType.value == 'highway') {
@@ -97,7 +107,27 @@ surfaceType.addEventListener('change', () => {
   }
 })
 
-  
+/* Настраиваем реагирование кнопки "ок" на ввод данных в input */
+
+footerInput.addEventListener('input', () => {
+  if (footerInput.value.length > 0) {
+    formBtn.classList.add('footer__form-btn_active');
+  } else if (footerInput.value.length < 1) {
+    formBtn.classList.remove('footer__form-btn_active');
+  }
+})
+
+/* После отправки формы убираем кнопку "ок" и показываем "круто!"*/
+
+emailForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  footerInput.value = 'Круто!'
+  formBtn.classList.remove('footer__form-btn_active');
+  setTimeout(()=> {
+    footerInput.value = '';
+  }, 3000)
+})
+
 //------------- ФУНКЦИИ ---------------//
 
 /**
@@ -116,6 +146,13 @@ function attributeSet(image, text, link) {
   return;
 }
 
+/**
+ * 
+ * @param {string} image 
+ * @param {string} text 
+ * @param {string} link 
+ * @returns устанавливает атрибуты для карточек с велосипедами в мобильной версии
+ */
 function mobileCardsAttributeSet(image, text, link) {
   for (i = 0; i < cards.length; i++) {
     mobileCardsImage[i].setAttribute('src', image[i]);
