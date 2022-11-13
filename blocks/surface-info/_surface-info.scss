@@ -1,6 +1,11 @@
 .surface-info {
   padding: 60px 0 160px 8.33%;
 
+  &__dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
   &__container {
     box-sizing: content-box;
   }

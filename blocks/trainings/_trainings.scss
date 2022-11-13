@@ -3,6 +3,11 @@
   justify-content: space-between;
   padding: 150px 8.33% 120px 8.33%;
 
+  &__dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
@@ -40,6 +45,11 @@
     font-size: 18px;
     line-height: 28px;
     color: #151515;
+    transition: .5s;
+
+    &:hover {
+      opacity: .75;
+    }
   }
 
   @media screen and (max-width: 1299px) {

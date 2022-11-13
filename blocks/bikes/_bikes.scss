@@ -4,6 +4,11 @@
   flex-direction: column;
   row-gap: 160px;
 
+  &__dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
   &__info {
     display: flex;
     justify-content: space-between;

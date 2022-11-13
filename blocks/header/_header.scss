@@ -5,6 +5,7 @@
   left: 0;
   width: 100%;
   position: fixed;
+  
 
   &__navigation {
     max-width: 1440px;
@@ -88,5 +89,25 @@
       top: 50%;
       transform: scale(1) translate(0px, -50%);
     }
+  }
+
+  &__button_dark span,
+  &__button_dark::before,
+  &__button_dark::after {
+    background-color: #fff;
+  }
+
+  &__button.header__button_active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+
+  &__button.header__button_active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  &__button.header__button_active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
   }
 }

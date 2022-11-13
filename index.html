@@ -15,9 +15,9 @@
       <div class="header__navigation">
         <nav class="header__menu">
           <ul class="header__list">
-            <li><a href="#" class="header__point">Покрытия и градиенты</a></li>
-            <li><a href="#" class="header__point">Велосипеды</a></li>
-            <li><a href="#" class="header__point">Тренировки</a></li>
+            <li><a data-goto=".surface-info" href="" class="header__point">Покрытия и градиенты</a></li>
+            <li><a data-goto=".bikes" href="" class="header__point">Велосипеды</a></li>
+            <li><a data-goto=".trainings" href="" class="header__point">Тренировки</a></li>
           </ul>
         </nav>
         <div class="header__button">
@@ -209,10 +209,9 @@
     <footer class="footer">
       <h2 class="footer__header">Подпишитесь на рассылку &mdash;</h2>
       <form class="footer__form">
-        <input type="email" placeholder="Ваш e-mail" class="footer__input">
+        <input type="email" placeholder="Ваш e-mail" class="footer__input" id="footerInput">
         <button type="submit" class="footer__form-btn">ok</button>
       </form>
-
       <div class="footer__additions">
         <p class="footer__copyright">&copy; Road Club 2022</p>
         <div class="footer__container">
@@ -225,8 +224,25 @@
           </div>
         </div>
       </div>
-
     </footer>
+  </div>
+  <div class="popup">
+    <nav class="popup__navigation">
+      <ul class="popup__menu-list">
+        <li><a data-goto=".surface-info" href="#" class="popup__text">Покрытия и градиенты</a></li>
+        <li><a data-goto=".bikes" href="#" class="popup__text">Велосипеды</a></li>
+        <li><a data-goto=".trainings" href="#" class="popup__text">Тренировки</a></li>
+      </ul>
+    </nav>
+    <div class="popup__container">
+      <div class="popup__tabs">
+        <input class="popup__radio-btn" type="radio" id="mLight" name="tabs" checked />
+        <label class="popup__tab" for="mLight"></label>
+        <input class="popup__radio-btn" type="radio" id="mDark" name="tabs" />
+        <label class="popup__tab" for="mDark"></label>
+        <span class="popup__glider"></span>
+      </div>
+    </div>
   </div>
   <script src="./vendors/slider/slider.js"></script>
   <script src="./scripts/index.js"></script>

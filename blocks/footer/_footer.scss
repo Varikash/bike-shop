@@ -6,6 +6,11 @@
   row-gap: 50px;
   position: relative;
 
+  &__dark-mode {
+    background-color: #2F2F2F;
+    color: #fff;
+  }
+
   &__header {
     font-weight: 600;
     font-size: 24px;
@@ -66,6 +71,49 @@
       color: transparent
     }
   }
+
+  &__input-dark {
+    background-color: #2f2f2f;
+    color: #fff;
+
+    &:hover::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #fff;
+    }
+
+    &:hover:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #fff;
+    }
+
+    &:hover::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #fff;
+    }
+
+    &:hover:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #fff;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent
+    }
+
+    &:focus::-moz-placeholder {
+      color: transparent
+    }
+
+    &:focus:-moz-placeholder {
+      color: transparent
+    }
+
+    &:focus:-ms-input-placeholder {
+      color: transparent
+    }
+  }
+
+
 
   &__form-btn {
     display: none;
@@ -170,21 +218,23 @@
 
   @media screen and (max-width: 889px) {
     padding: 60px 18px 25px 18px;
-  }
-
-  @media screen and (max-width: 541px) {
     background-image: url(../../images/footer__star.svg);
     background-repeat: no-repeat;
     background-position: right 16px bottom 16px;
+
+    &__container {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 541px) {
     row-gap: 40px;
 
     &__input {
       width: 284px;
     }
 
-    &__container {
-      display: none;
-    }
+    
 
     &__additions {
       margin-top: 59px;
