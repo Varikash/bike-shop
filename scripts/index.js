@@ -62,6 +62,7 @@ lightModeDesktop.addEventListener('change', () => {
   });
   document.querySelector('.footer').classList.remove('footer__dark-mode');
   document.querySelector('#footerInput').classList.remove('footer__input-dark');
+  document.querySelector('.footer__form-btn').classList.remove('footer__form-btn_mode_dark')
 })
 
 darkModeDesktop?.addEventListener('change', () => {
@@ -100,6 +101,7 @@ darkModeDesktop?.addEventListener('change', () => {
   });
   document.querySelector('.footer').classList.add('footer__dark-mode');
   document.querySelector('#footerInput').classList.add('footer__input-dark');
+  document.querySelector('.footer__form-btn').classList.add('footer__form-btn_mode_dark')
 })
 
 const highwayImage = [
