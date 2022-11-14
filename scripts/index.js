@@ -1,3 +1,24 @@
+const page = document.querySelector('.page');
+const headerNavigation = document.querySelector('.header__navigation');
+const headerPoint = document.querySelectorAll('.header__point');
+const intro = document.querySelector('.intro');
+const introParagraph = document.querySelector('.intro__paragraph');
+const introBrand = document.querySelector('.intro__brand');
+const surface = document.querySelector('.surface');
+const surfaceOccupation = document.querySelector('.surface__author-occupation');
+const surfaceInfo = document.querySelector('.surface-info');
+const sliderControls = document.querySelectorAll('.slider__control');
+const bikes = document.querySelector('.bikes');
+const prevBtn = document.querySelector('.slider__control[data-slide = "prev"]');
+const nextBtn = document.querySelector('.slider__control[data-slide = "next"]');
+const trainings = document.querySelector('.trainings');
+const trainingsText = document.querySelector('.trainings__text');
+const trainingsLinks = document.querySelectorAll('.trainings__link');
+const footerTabs = document.querySelector('.footer__tabs');
+const bikesMobile = document.querySelector('.bikes-mobile');
+const mobileCards = document.querySelectorAll('.bikes-mobile__card');
+const popupTabs = document.querySelector('.popup__tabs');
+
 const iconMenu = document.querySelector('.header__button');
 const popup = document.querySelector('.popup');
 
@@ -19,90 +40,15 @@ const mobileCardsImage = document.querySelectorAll('.bikes-mobile__card-image');
 const mobileCardsText = document.querySelectorAll('.bikes-mobile__text');
 const mobileCardsLink = document.querySelectorAll('.bikes-mobile__link');
 
+const footer = document.querySelector('.footer');
 const emailForm = document.querySelector('.footer__form');
 const footerInput = document.querySelector('.footer__input');
 const formBtn = document.querySelector('.footer__form-btn');
 
 const lightModeDesktop = document.querySelector('#light');
 const darkModeDesktop = document.querySelector('#dark');
-
-lightModeDesktop.addEventListener('change', () => {
-  document.querySelector('.page').style.backgroundColor ='#f4f4f4';
-  document.querySelector('.header__navigation').style.backgroundColor ='#f4f4f4';
-  document.querySelectorAll('.header__point').forEach(element => {
-    element.style.color = '#151515';
-  })
-  document.querySelector('.header__button').classList.remove('header__button_dark');
-  document.querySelector('.intro').classList.remove('intro__dark-mode');
-  document.querySelector('.intro__paragraph').style.color = '#222';
-  document.querySelector('.intro__brand').style.color = '#151515';
-  document.querySelector('.surface').classList.remove('surface__dark-mode');
-  document.querySelector('.surface__author-occupation').style.color = "#222";
-  document.querySelector('.surface-info').classList.remove('surface-info__dark-mode');
-  document.querySelectorAll('.slider__control').forEach(element => {
-    element.classList.remove('slider__control_mode_dark');
-  })
-  const prevBtn = document.querySelector('.slider__control[data-slide = "prev"]');
-  prevBtn.classList.add('slider__control_direction_previous');
-  prevBtn.classList.remove('slider__control_mode_dark-left');
-
-  const nextBtn = document.querySelector('.slider__control[data-slide = "next"]');
-  nextBtn.classList.add('slider__control_direction_next');
-  nextBtn.classList.remove('slider__control_mode_dark-right');
-
-  document.querySelector('.bikes').classList.remove('bikes__dark-mode');
-  document.querySelectorAll('.bikes__btn').forEach(btn => {
-    btn.style.setProperty('color','#222');
-    btn.style.setProperty('background-color','#f4f4f4');
-  });
-  document.querySelector('.trainings').classList.remove('trainings__dark-mode');
-  document.querySelector('.trainings__text').style.color = "#151515";
-  document.querySelectorAll('.trainings__link').forEach(link => {
-    link.style.setProperty('color', '#151515');
-  });
-  document.querySelector('.footer').classList.remove('footer__dark-mode');
-  document.querySelector('#footerInput').classList.remove('footer__input-dark');
-  document.querySelector('.footer__form-btn').classList.remove('footer__form-btn_mode_dark')
-})
-
-darkModeDesktop?.addEventListener('change', () => {
-  document.querySelector('.page').style.backgroundColor ='#333333';
-  document.querySelector('.header__navigation').style.backgroundColor ='#333333';
-  document.querySelectorAll('.header__point').forEach(element => {
-    element.style.color = '#fff';
-  })
-  document.querySelector('.header__button').classList.add('header__button_dark');
-  document.querySelector('.intro').classList.add('intro__dark-mode');
-  document.querySelector('.intro__paragraph').style.color = '#fff';
-  document.querySelector('.intro__brand').style.color = '#fff';
-  document.querySelector('.surface').classList.add('surface__dark-mode');
-  document.querySelector('.surface__author-occupation').style.color = "#e5e5e5";
-  document.querySelector('.surface-info').classList.add('surface-info__dark-mode');
-  document.querySelectorAll('.slider__control').forEach(element => {
-    element.classList.add('slider__control_mode_dark');
-  })
-  const prevBtn = document.querySelector('.slider__control[data-slide = "prev"]');
-  prevBtn.classList.remove('slider__control_direction_previous');
-  prevBtn.classList.add('slider__control_mode_dark-left');
-
-  const nextBtn = document.querySelector('.slider__control[data-slide = "next"]');
-  nextBtn.classList.remove('slider__control_direction_next');
-  nextBtn.classList.add('slider__control_mode_dark-right');
-
-  document.querySelector('.bikes').classList.add('bikes__dark-mode');
-  document.querySelectorAll('.bikes__btn').forEach(btn => {
-    btn.style.setProperty('color','#ffffff');
-    btn.style.setProperty('background-color','#333333');
-  });
-  document.querySelector('.trainings').classList.add('trainings__dark-mode');
-  document.querySelector('.trainings__text').style.color = "#fff";
-  document.querySelectorAll('.trainings__link').forEach(link => {
-    link.style.setProperty('color', '#fff');
-  });
-  document.querySelector('.footer').classList.add('footer__dark-mode');
-  document.querySelector('#footerInput').classList.add('footer__input-dark');
-  document.querySelector('.footer__form-btn').classList.add('footer__form-btn_mode_dark')
-})
+const lightModePopup = document.querySelector('#mLight');
+const darkModePopup = document.querySelector('#mDark');
 
 const highwayImage = [
   './images/highway__caledonia.jpeg',
@@ -166,17 +112,25 @@ iconMenu?.addEventListener('click', () => {
   document.body.classList.toggle('lock');
 })
 
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 889) {
+    popup?.classList.remove('popup_active');
+    document.body.classList.remove('lock');
+    iconMenu.classList.remove('header__button_active');
+  }
+})
+
 // мягкий скролл при нажатии на меню в шапке
 menuLinks?.forEach(menuLink => {
   menuLink?.addEventListener('click', smoothScroll);
 });
 
 //мягкий скролл при нажатии на меню в модальном окне
-popupLinks.forEach(popupLink =>{
+popupLinks.forEach(popupLink => {
   popupLink?.addEventListener('click', smoothScroll);
 });
 
-/* При выборе "шоссе" показываем соответствующие карточки с велосипедами */
+// При выборе "шоссе" показываем соответствующие карточки с велосипедами 
 
 highwayBtn?.addEventListener('click', () => {
   attributeSet(highwayImage, highwayText, highwayLink);
@@ -184,7 +138,7 @@ highwayBtn?.addEventListener('click', () => {
   addClass(highwayBtn, 'bikes__btn_active');
 })
 
-/* При выборе "грэвел" показываем соответствующие карточки с велосипедами */
+// При выборе "грэвел" показываем соответствующие карточки с велосипедами
 
 gravelBtn?.addEventListener('click', () => {
   attributeSet(gravelImage, gravelText, gravelLink);
@@ -192,7 +146,7 @@ gravelBtn?.addEventListener('click', () => {
   addClass(gravelBtn, 'bikes__btn_active');
 })
 
-/* При выборе "ТТ" показываем соответствующие карточки с велосипедами */
+// При выборе "ТТ" показываем соответствующие карточки с велосипедами
 
 triatlonBtn?.addEventListener('click', () => {
   attributeSet(triatlonImage, triatlonText, triatlonLink);
@@ -200,7 +154,7 @@ triatlonBtn?.addEventListener('click', () => {
   addClass(triatlonBtn, 'bikes__btn_active');
 })
 
-/* настройка карточек в мобильной версии секции */
+// настройка карточек в мобильной версии секции 
 
 surfaceType?.addEventListener('change', () => {
   if (surfaceType.value == 'highway') {
@@ -212,7 +166,7 @@ surfaceType?.addEventListener('change', () => {
   }
 })
 
-/* Настраиваем реагирование кнопки "ок" на ввод данных в input */
+// Настраиваем реагирование кнопки "ок" на ввод данных в input
 
 footerInput?.addEventListener('input', () => {
   if (footerInput.value.length > 0) {
@@ -222,7 +176,7 @@ footerInput?.addEventListener('input', () => {
   }
 })
 
-/* После отправки формы убираем кнопку "ок" и показываем "круто!"*/
+// После отправки формы убираем кнопку "ок" и показываем "круто!"
 
 emailForm?.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -233,6 +187,31 @@ emailForm?.addEventListener('submit', (e) => {
   }, 3000)
 })
 
+//переключение на темную тему
+
+darkModeDesktop?.addEventListener('change', () => {
+  dark();
+  darkModePopup.checked = true;
+})
+
+// Переключение на светлую тему
+
+lightModeDesktop.addEventListener('change', () => {
+  light();
+  lightModePopup.checked = true;
+})
+
+lightModePopup.addEventListener('change', () => {
+  light();
+  lightModeDesktop.checked = true;
+})
+
+darkModePopup.addEventListener('change', () => {
+  dark();
+  darkModeDesktop.checked = true;
+})
+
+
 //------------- ФУНКЦИИ ---------------//
 
 /**
@@ -242,6 +221,15 @@ emailForm?.addEventListener('submit', (e) => {
  */
 function addClass(element, className) {
   element.classList.add(className);
+}
+
+/**
+ * функция удаляет класс нужному элементу
+ * @param {HTMLElement} element 
+ * @param {string} className 
+ */
+function removeClass(element, className) {
+  element.classList.remove(className);
 }
 
 /**
@@ -289,7 +277,7 @@ function removeActiveClass() {
  * Функция мягкого скролла и закрытия модального окна при нажатии на ссылку.
  * @param {HTMLElement} e 
  */
-function smoothScroll (e) {
+function smoothScroll(e) {
   e.preventDefault();
   const menuLink = e.target;
   console.log(menuLink);
@@ -305,3 +293,156 @@ function smoothScroll (e) {
     behavior: "smooth"
   });
 };
+
+/**
+ * 
+ * @param {string} color 
+ * @param  {...HTMLElement} element 
+ */
+function setBgc(color, element) {
+  element.style.backgroundColor = color;
+}
+
+function setColor(color, element) {
+  element.style.color = color;
+}
+
+function light() {
+  setBgc('#f4f4f4', page);
+  setBgc('#f4f4f4', headerNavigation);
+  setBgc("#fff", footerTabs);
+  setBgc('#fff', popupTabs);
+
+  headerPoint.forEach(element => {
+    setColor('#151515', element);
+  });
+
+  setColor('#222', introParagraph);
+  setColor('#151515', introBrand);
+  setColor('#222', surfaceOccupation);
+  setColor('#151515', trainingsText);
+
+  removeClass(iconMenu, 'header__button_dark');
+  removeClass(intro, 'intro__dark-mode');
+  removeClass(surface, 'surface__dark-mode');
+  removeClass(surfaceInfo, 'surface-info__dark-mode');
+
+  sliderControls.forEach(element => {
+    removeClass(element, 'slider__control_mode_dark');
+  })
+
+  removeClass(prevBtn, 'slider__control_mode_dark-left');
+  removeClass(nextBtn, 'slider__control_mode_dark-right');
+  removeClass(bikes, 'bikes__dark-mode');
+  removeClass(trainings, 'trainings__dark-mode');
+  removeClass(footer, 'footer__dark-mode');
+  removeClass(footerInput, 'footer__input-dark');
+  removeClass(formBtn, 'footer__form-btn_mode_dark');
+
+  mobileCards.forEach(element => {
+    removeClass(element, 'bikes-mobile__card-dark');
+  });
+
+  removeClass(bikesMobile, 'bikes-mobile__dark-mode');
+
+  popupLinks.forEach(element => {
+    removeClass(element, 'popup__text-white');
+  });
+
+  addClass(prevBtn, 'slider__control_direction_previous');
+  addClass(nextBtn, 'slider__control_direction_next');
+
+
+  cardBtn.forEach(btn => {
+    btn.style.setProperty('color', '#222');
+    btn.style.setProperty('background-color', '#f4f4f4');
+  });
+
+  popup.style.setProperty('background-color', '#f4f4f4');
+
+  trainingsLinks.forEach(link => {
+    link.style.setProperty('color', '#151515');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 889) {
+      footer.style.backgroundImage = 'url("../../images/footer__star.svg")';
+    } else {
+      footer.style.backgroundImage = 'none';
+    }
+  });
+}
+
+function dark() {
+
+  [page, headerNavigation, popup].forEach(element => {
+    setBgc('#333', element);
+  })
+
+  setBgc('#545454', popupTabs);
+  setBgc('#545454', footerTabs);
+
+  headerPoint.forEach(element => {
+    setColor('#fff', element);
+  });
+
+  [introParagraph, introBrand, trainingsText].forEach(element => {
+    setColor('#fff', element);
+  })
+
+  setColor('#e5e5e5', surfaceOccupation);
+
+  addClass(iconMenu, 'header__button_dark');
+  addClass(intro, 'intro__dark-mode');
+  addClass(surface, 'surface__dark-mode');
+  addClass(surfaceInfo, 'surface-info__dark-mode');
+  addClass(prevBtn, 'slider__control_mode_dark-left');
+  addClass(nextBtn, 'slider__control_mode_dark-right');
+  addClass(trainings, 'trainings__dark-mode');
+  addClass(bikes, 'bikes__dark-mode');
+  addClass(footer, 'footer__dark-mode');
+
+  sliderControls.forEach(element => {
+    addClass(element, 'slider__control_mode_dark');
+  })
+
+  addClass(intro, 'intro__dark-mode');
+  addClass(surface, 'surface__dark-mode');
+  addClass(surfaceInfo, 'surface-info__dark-mode');
+  addClass(prevBtn, 'slider__control_mode_dark-left');
+  addClass(nextBtn, 'slider__control_mode_dark-right');
+  addClass(trainings, 'trainings__dark-mode');
+  addClass(bikes, 'bikes__dark-mode');
+  addClass(footer, 'footer__dark-mode');
+  addClass(footerInput, 'footer__input-dark');
+  addClass(formBtn, 'footer__form-btn_mode_dark');
+  addClass(bikesMobile, 'bikes-mobile__dark-mode');
+
+  mobileCards.forEach(element => {
+    addClass(element, 'bikes-mobile__card-dark');
+  });
+
+  popupLinks.forEach(element => {
+    addClass(element, 'popup__text-white');
+  })
+
+  removeClass(prevBtn, 'slider__control_direction_previous');
+  removeClass(nextBtn, 'slider__control_direction_next');
+
+  cardBtn.forEach(btn => {
+    btn.style.setProperty('color', '#ffffff');
+    btn.style.setProperty('background-color', '#333333');
+  });
+  trainingsLinks.forEach(link => {
+    link.style.setProperty('color', '#fff');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 889) {
+      footer.style.backgroundImage = 'url("../../images/footer__star_white.svg")';
+    } else {
+      footer.style.backgroundImage = 'none';
+    }
+  });
+
+}

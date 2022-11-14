@@ -1,6 +1,11 @@
 .bikes-mobile {
   display: none;
 
+  &__dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
   @media screen and (max-width:648px) {
     display: block;
     padding: 40px 0 40px 0; 
@@ -42,6 +47,11 @@
     padding: 14.95px 14.95px 0 14.95px;
     row-gap: 3px;
     margin-top: 10px;
+  }
+
+  &__card-dark {
+    background-color:#f4f4f4;
+    color: #151515;
   }
 
   &__card-image {

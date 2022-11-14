@@ -211,19 +211,20 @@
     transition: 0.25s ease-out;
   }
 
-  &__radio-btn[id="light"]:checked ~ .footer__glider {
+  &__radio-btn[id="light"]:checked~.footer__glider {
     transform: translateX(5%);
   }
-  
-  &__radio-btn[id="dark"]:checked ~ .footer__glider {
+
+  &__radio-btn[id="dark"]:checked~.footer__glider {
     transform: translateX(95%);
   }
 
   @media screen and (max-width: 889px) {
     padding: 60px 18px 25px 18px;
-    background-image: url(../../images/footer__star.svg);
+    background-image: url('../../images/footer__star.svg');
     background-repeat: no-repeat;
     background-position: right 16px bottom 16px;
+  
 
     &__container {
       display: none;
@@ -237,7 +238,7 @@
       width: 284px;
     }
 
-    
+
 
     &__additions {
       margin-top: 59px;
