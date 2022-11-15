@@ -50,13 +50,13 @@
     margin-top: auto;
 
     &::before {
-      content: url(../../images/footer__sun.svg);
+      content: url('../images/footer__sun.svg');
       position: absolute;
       left: 0;
     }
 
     &::after {
-      content: url(../../images/footer__moon.svg);
+      content: url('../images/footer__moon.svg');
       position: absolute;
       right: 0;
     }
