@@ -60,28 +60,28 @@
     background-color: #EBEBEB;
 
     &_direction_previous {
-      background-image: url("../../images/slider_button_prev.svg");
+      background-image: url("../images/slider_button_prev.svg");
       background-repeat: no-repeat;
       background-position: center;
       left: 8.33%;
     }
 
     &_mode_dark-left {
-      background-image: url("../../images/slider_btn_prev_dark.svg");
+      background-image: url("../images/slider_btn_prev_dark.svg");
       background-repeat: no-repeat;
       background-position: center;
       left: 8.33%;
     }
 
     &_direction_next {
-      background-image: url("../../images/slider_button_next.svg");
+      background-image: url("../images/slider_button_next.svg");
       background-repeat: no-repeat;
       background-position: center;
       left: 13%;
     }
 
     &_mode_dark-right {
-      background-image: url('../../images/slider_btn_next_dark.svg');
+      background-image: url('../images/slider_btn_next_dark.svg');
       background-repeat: no-repeat;
       background-position: center;
       left: 13%;

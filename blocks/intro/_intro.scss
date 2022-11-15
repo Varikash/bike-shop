@@ -1,11 +1,11 @@
 .intro {
   position: relative;
   display: flex;
-  column-gap: 50px;
+  // column-gap: 50px;
   padding-left: 8.33%;
   padding-top: 30px;
   min-height: 856px;
-  background-image: url("../../images/intro__placeholder.jpeg");
+  background-image: url("../images/intro__placeholder.jpeg");
   background-repeat: no-repeat;
   background-position: right bottom;
 
@@ -18,7 +18,7 @@
     max-width: 460px;
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 45px;
     margin-top: 60px;
   }
   
@@ -35,10 +35,11 @@
     line-height: 28px;
     color: #222;
     opacity: .7;
-    max-width: 360px;
+    max-width: 460px;
   }
 
   &__button {
+    margin-top: 5px;
     width: 180px;
     height: 50px;
     background-color: #24B47E;
@@ -57,7 +58,7 @@
   }
 
   &__brand {
-    margin-top: 117px;
+    margin-top: 127px;
     color: #151515;
     font-weight: 400;
     font-size: 18px;
@@ -78,7 +79,7 @@
     height: 430px;
     position: absolute;
     left: 43.75%;
-    top: 347px;
+    top: 395px;
     display: flex
   }
 
