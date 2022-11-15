@@ -152,13 +152,13 @@
     margin-left: 22px;
 
     &::before {
-      content: url(../../images/footer__sun.svg);
+      content: url('../images/footer__sun.svg');
       position: absolute;
       left: 0;
     }
 
     &::after {
-      content: url(../../images/footer__moon.svg);
+      content: url('../images/footer__moon.svg');
       position: absolute;
       right: 0;
     }
@@ -221,7 +221,7 @@
 
   @media screen and (max-width: 889px) {
     padding: 60px 18px 25px 18px;
-    background-image: url('../../images/footer__star.svg');
+    background-image: url('../images/footer__star.svg');
     background-repeat: no-repeat;
     background-position: right 16px bottom 16px;
   
