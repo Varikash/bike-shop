@@ -20,7 +20,7 @@
     row-gap: 45px;
     margin-top: 60px;
   }
-  
+
   &__header {
     font-weight: 700;
     font-size: 55px;
@@ -37,12 +37,45 @@
     max-width: 460px;
   }
 
-  &__button {
+  &__button-container {
+    position: relative;
     margin-top: 5px;
     width: 180px;
     height: 50px;
+    border-radius: 4px;
+  }
+
+  &__button {
+    width: 180px;
+    height: 50px;
+    position: relative;
     background-color: #24B47E;
     border-radius: 4px;
+    
+    transition: ease-in .75s ease-out .5s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 50px;
+      background-color: #319e75;
+      border-radius: 4px;
+      transition: all 2s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__button-text {
+    position: absolute;
+    top: 18px;
+    left: 46px;
+    
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
@@ -142,7 +175,7 @@
 
   @media screen and (max-width: 889px) {
     padding-left: 18px;
-    
+
     &__info {
       max-width: 170px;
       row-gap: 40px;
@@ -163,7 +196,7 @@
       left: 40%
     }
 
-    &__brand-box{
+    &__brand-box {
       display: none;
     }
   }
@@ -173,22 +206,33 @@
   }
 
 
-  @media screen and (max-width: 648px){
+  @media screen and (max-width: 648px) {
     background-image: url('../images/intro__placeholder_small.png');
     background-size: auto;
     background-position: 48px 160px;
     padding-bottom: 40px;
     padding-right: 18px;
 
-  
+
     &__paragraph {
       margin-top: 388px;
       max-width: none;
     }
 
+    &__button-container {
+      width: 284px;
+      margin-top: 0;
+    }
+
     &__button {
       width: 284px;
-      margin-top: 0px;
+      margin-top: 0;
+    }
+
+    &__button-text {
+      top: 13px;
+      left: 101px;
+      letter-spacing: 0;
     }
 
     &__placeholder {
