@@ -20,6 +20,7 @@
 
   &__form {
     position: relative;
+    max-width: 360px;
   }
 
   &__input {
@@ -117,7 +118,7 @@
     display: none;
     position: absolute;
     top: 32%;
-    left: 338px;
+    left: 90%;
 
     &_mode_dark {
       background-color: #333;
@@ -234,6 +235,9 @@
   @media screen and (max-width: 541px) {
     row-gap: 40px;
 
+    &__form {
+      max-width: 284px;
+    }
     &__input {
       width: 284px;
     }

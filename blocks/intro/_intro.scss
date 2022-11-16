@@ -1,7 +1,6 @@
 .intro {
   position: relative;
-  display: flex;
-  // column-gap: 50px;
+  // display: flex;
   padding-left: 8.33%;
   padding-top: 30px;
   min-height: 856px;
@@ -123,7 +122,7 @@
     min-height: 746px;
 
     &__info {
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     &__placeholder {
@@ -145,7 +144,7 @@
     padding-left: 18px;
     
     &__info {
-      max-width: 300px;
+      max-width: 170px;
       row-gap: 40px;
     }
 
@@ -189,6 +188,7 @@
 
     &__button {
       width: 284px;
+      margin-top: 0px;
     }
 
     &__placeholder {
@@ -198,18 +198,22 @@
   }
 
   @media screen and (max-width: 400px) {
-    background-position: 48px 180px;
+    background-position: 47px 169px;
+
+    &__info {
+      max-width: none;
+    }
 
     &__header {
-      max-width: 250px;
+      max-width: 190px;
     }
 
     &__paragraph {
-      max-width: 284px;
+      // max-width: 284px;
     }
 
     &__placeholder {
-      top: 304px;
+      top: 320px;
     }
   }
 }

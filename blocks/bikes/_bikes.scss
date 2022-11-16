@@ -2,7 +2,7 @@
   padding: 60px 0 60px 8.33%;
   display: flex;
   flex-direction: column;
-  row-gap: 160px;
+  row-gap: 120px;
 
   &__dark-mode {
     background-color: #333;
@@ -23,6 +23,7 @@
   }
 
   &__btn-list {
+    margin-top: 23px;
     align-self: center;
     display: flex;
     column-gap: 40px;

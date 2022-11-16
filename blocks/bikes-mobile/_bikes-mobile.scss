@@ -8,7 +8,7 @@
 
   @media screen and (max-width:648px) {
     display: block;
-    padding: 40px 0 40px 0; 
+    padding: 0px 0 40px 0; 
   min-height: 580px;
 
   &__header {
@@ -25,7 +25,7 @@
   &__select {
     width: 114px;
     height: 30px;
-    border: 1px solid;
+    border: 1px solid #E3E3E3;
     background-color: #F4F4F4;
     font-weight: 600;
     font-size: 11px;
