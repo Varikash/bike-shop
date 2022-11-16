@@ -1,0 +1,264 @@
+.intro {
+  position: relative;
+  // display: flex;
+  padding-left: 8.33%;
+  padding-top: 30px;
+  min-height: 856px;
+  background-image: url("../images/intro__placeholder.jpeg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+
+  &__dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
+  &__info {
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+    margin-top: 60px;
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 60px;
+    max-width: 300px;
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #222;
+    opacity: .7;
+    max-width: 460px;
+  }
+
+  &__button-container {
+    position: relative;
+    margin-top: 5px;
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+  }
+
+  &__button {
+    width: 180px;
+    height: 50px;
+    position: relative;
+    background-color: #24B47E;
+    border-radius: 4px;
+
+    transition: ease-in .75s ease-out .5s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 50px;
+      background-color: #319e75;
+      border-radius: 4px;
+      transition: all 2s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__button-text {
+    position: absolute;
+    top: 18px;
+    left: 46px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    pointer-events: none;
+  }
+
+  &__brand-box {
+    display: flex;
+    column-gap: 30px;
+    align-items: flex-end;
+  }
+
+  &__brand {
+    margin-top: 127px;
+    color: #151515;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+
+  &__line {
+    width: 132px;
+    height: 2px;
+    background-color: #D7D4D4;
+    display: inline-block;
+    margin-bottom: 7px;
+  }
+
+  &__placeholder {
+    width: 440px;
+    height: 430px;
+    position: absolute;
+    left: 43.75%;
+    top: 395px;
+    display: flex
+  }
+
+  &__card {
+    width: 100%;
+    height: 300px;
+    background-color: #F4F4F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    position: sticky;
+    top: 74px;
+    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  }
+
+  &__image {
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 1099px) {
+    background-position: 100% 40%;
+    background-size: 500px 700px;
+
+    &__placeholder {
+      width: 350px;
+      height: 350px;
+    }
+
+    &__card {
+      height: 250px;
+    }
+
+    &__image {
+      scale: .8;
+    }
+  }
+
+  @media screen and (max-width: 999px) {
+    background-size: 400px 600px;
+    min-height: 746px;
+
+    &__info {
+      margin-top: 20px;
+    }
+
+    &__placeholder {
+      width: 234px;
+      height: 187px;
+      left: 50%;
+    }
+
+    &__card {
+      height: 160px;
+    }
+
+    &__image {
+      scale: .6
+    }
+  }
+
+  @media screen and (max-width: 889px) {
+    padding-left: 18px;
+
+    &__info {
+      max-width: 170px;
+      row-gap: 40px;
+    }
+
+    &__header {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -0.5px;
+    }
+
+    &__paragraph {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__placeholder {
+      left: 40%
+    }
+
+    &__brand-box {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 739px) {
+    background-size: 300px 500px;
+  }
+
+
+  @media screen and (max-width: 648px) {
+    background-image: url('../images/intro__placeholder_small.png');
+    background-size: auto;
+    background-position: 48px 160px;
+    padding-bottom: 40px;
+    padding-right: 18px;
+
+
+    &__paragraph {
+      margin-top: 388px;
+      max-width: none;
+    }
+
+    &__button-container {
+      width: 284px;
+      margin-top: 0;
+    }
+
+    &__button {
+      width: 284px;
+      margin-top: 0;
+    }
+
+    &__button-text {
+      top: 13px;
+      left: 101px;
+      letter-spacing: 0;
+    }
+
+    &__placeholder {
+      left: 18px;
+      top: 284px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    background-position: 47px 169px;
+
+    &__info {
+      max-width: none;
+    }
+
+    &__header {
+      max-width: 190px;
+    }
+
+    &__paragraph {
+      // max-width: 284px;
+    }
+
+    &__placeholder {
+      top: 320px;
+    }
+  }
+}

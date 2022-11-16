@@ -1,0 +1,40 @@
+.surface-info {
+  padding: 69px 0 160px 8.33%;
+
+  &__dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
+  &__container {
+    box-sizing: content-box;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+  }
+
+  @media screen and (max-width: 1039px) {
+    padding: 60px 0 60px 8.33%;
+  }
+
+  @media screen and (max-width: 889px) {
+    padding: 60px 0 60px 18px; 
+  }
+
+  @media screen and (max-width: 740px) {
+    padding: 40px 18px 40px 18px; 
+
+    &__item {
+      row-gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 648px) {
+    &__item {
+      row-gap: 40px;
+    } 
+  }
+}
